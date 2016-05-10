@@ -1,0 +1,55 @@
+package com.califo.dao.imp;
+
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import com.califo.dao.ProductDao;
+import com.califo.hibernate.util.HibernateUtil;
+import com.califo.model.Product;
+
+public class ProductDaoimp implements ProductDao {
+
+	@Override
+	public boolean saveProduct(Product p) {
+		Session session=HibernateUtil.openSession();
+		
+		Transaction tx=session.beginTransaction();
+		
+		session.save(p);
+		
+		tx.commit();
+		
+		
+		
+		
+		
+		return false;
+	}
+
+	@Override
+	public Product findProductById(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean deleteProduct(int id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean updateProduct(Product p) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public List<Product> findProduct() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

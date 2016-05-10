@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+		<!-- <include file=""></include> -->
+
+
+	<package name="default"  extends="struts-default"><!-- namespace="/" -->
+		
+		
+		<interceptors>
+			<interceptor name="theInterceptor1" class="com.califo.interceptor.TheInterceptor">
+			<param name="test">aaaa</param>
+			</interceptor>
+		
+			<interceptor name="Interceptor2" class="com.califo.interceptor.Interceptor2"></interceptor>
+		
+			<interceptor name="Interceptor3" class="com.califo.interceptor.Interceptor3"></interceptor>
+		
+		<interceptor-stack name="myDefaultInterceptor">
+			<interceptor-ref name="Interceptor2"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</interceptor-stack>
+		
+		</interceptors> 
+		<default-interceptor-ref name="myDefaultInterceptor"></default-interceptor-ref>
+	
+		
+		<global-results>
+				<!-- 配置全局 -->
+				<result name="usernameInvalid">/fail.jsp</result>
+				<result name="login">/Login.jsp</result>
+		</global-results>
+		
+		
+		
+		<action name="login" class="com.califo.action.LoginAction">
+			
+			<exception-mapping result="usernameInvalid" exception="com.califo.exception.UsernameException"></exception-mapping>
+			<result name="success">/Result.jsp</result>
+			<result name="input">/Login.jsp</result>
+			<!-- 配置单个 -->
+			<result name="usernameInvalid">/fail.jsp</result>
+		
+		</action>
+		
+		
+		<action name="registerTest" class="com.califo.action.RegisterAction_test">
+			<result>/Result.jsp</result>
+		</action>
+		
+		<action name="register" class="com.califo.action.RegisterAction">
+			<result name="success">/success.jsp</result>
+			<result name="invalid.token">/fail.jsp</result>
+		
+		<!-- 	<interceptor-ref name="theInterceptor1"></interceptor-ref>
+			<interceptor-ref name="Interceptor2"></interceptor-ref>
+			<interceptor-ref name="Interceptor3"></interceptor-ref>
+				<param name="includeMethods">excute</param>
+			
+			<interceptor-ref name="token"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref> -->
+		</action>
+		<action name="listalluser" class="com.califo.action.ListAllUserAction">
+				<result name="success">/userlist.jsp</result>
+				<result name="input">/fail.jsp</result>
+		</action>
+	
+	
+	</package>
+</struts>    

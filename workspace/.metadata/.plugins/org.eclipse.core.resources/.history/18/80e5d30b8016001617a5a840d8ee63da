@@ -1,0 +1,40 @@
+package com.califo.junit;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+import org.hibernate.service.Service;
+import org.hibernate.service.ServiceRegistry;
+import org.hibernate.service.ServiceRegistryBuilder;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+import com.califo.model.Product;
+
+public class ProductTest {
+	Session session;
+	SessionFactory sessionFactory;
+
+	@Test
+	public void Testsave(Product p) {
+
+	}
+
+	@Before
+	private void init() {
+		Configuration configuration = new Configuration().configure();
+		ServiceRegistry serviceRegistry = new ServiceRegistryBuilder()
+				.applySettings(configuration.getProperties())
+				.buildServiceRegistry();
+		sessionFactory=configuration.buildSessionFactory(serviceRegistry);
+
+	}
+
+	@After
+	private void destroy() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

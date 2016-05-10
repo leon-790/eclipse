@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="ProductTest.Testsave" project="Califo" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testcase name="Testsave" classname="com.califo.junit.ProductTest" time="3.796"/>
+</testrun>

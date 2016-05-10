@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="com.califo.bean">
+
+	<class name="User" table="User">
+	
+	
+	
+		<id name="id" type="java.lang.Integer">
+			<column name="ID" />
+			<generator class="native" />
+		</id>
+		<property name="username" type="java.lang.String">
+			<column name="USER_NAME"></column>
+		</property>
+
+		<property name="password" type="java.lang.String">
+			<column name="PASSWORD"></column>
+		</property>
+		<property name="date" type="java.sql.Date"><!-- 可以是time  date  timestamp 为hibernate类型  可以满足util类型与sql类型的转化-->
+			<column name="DATE"></column>
+		</property>
+	</class>
+
+
+
+
+</hibernate-mapping>

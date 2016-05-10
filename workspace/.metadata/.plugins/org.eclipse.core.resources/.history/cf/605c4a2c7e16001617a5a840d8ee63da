@@ -1,0 +1,30 @@
+package com.califo.junit;
+import org.junit.Before;
+import org.junit.Test;
+
+import com.califo.model.Product;
+
+
+
+
+public class ProductTest  {
+	
+	
+	@Test
+public void 	Testsave(Product p){
+		
+		
+		
+		
+	}
+		@Before
+		private void init() {
+			// TODO Auto-generated method stub
+
+		}
+		
+		
+		
+		
+		
+}

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="com.">
+		<class name="Product" table="PRODUCT">
+			<id name="id" type="integer">
+			<column name="ID"/>
+			<generator class="native"/>
+			</id>
+		<property name="item" type="string">
+			<column name="ITEM"/>
+		
+		</property>
+		<property name="approach" type="string">
+		<column name="PPROACH"/>
+		</property>
+			
+			<property name="unit" type="string">
+				<column name="UNIT"/>
+			
+			</property>
+			
+			<property name=""></property>
+		</class>
+</hibernate-mapping>

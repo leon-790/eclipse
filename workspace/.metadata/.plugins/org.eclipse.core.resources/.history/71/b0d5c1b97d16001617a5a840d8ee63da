@@ -1,0 +1,5 @@
+package com.califo.junit;
+import org.junit.Test;
+public class ProductTest  {
+
+}

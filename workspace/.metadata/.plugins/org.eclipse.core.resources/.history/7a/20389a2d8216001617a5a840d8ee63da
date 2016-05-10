@@ -1,0 +1,5 @@
+package com.califo.dao;
+
+public interface ProductDao {
+
+}
